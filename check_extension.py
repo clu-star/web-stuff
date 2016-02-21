@@ -67,6 +67,30 @@ def upload_file():
     border: 0;
     transition: all .2s ease;
     }
+    .file-submit-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #1FB264;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #15824B;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    }
+    .submit-btn:hover {
+    background: #1AA059;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+    }
+    .submit-btn:active {
+    border: 0;
+    transition: all .2s ease;
+    }
     .file-upload-content {
     display: none;
     text-align: center;
@@ -97,6 +121,7 @@ def upload_file():
     }
     .drag-text {
     text-align: center;
+
     }
     .drag-text h3 {
     font-weight: 100;
@@ -140,47 +165,54 @@ def upload_file():
   <script class = "upload">
   function readURL(input) {
   if (input.files && input.files[0]) {
-  var reader = new FileReader();
-  reader.onload = function(e) {
-  $('.image-upload-wrap').hide();
-  $('.file-upload-image').attr('src', e.target.result);
-  $('.file-upload-content').show();
-  $('.image-title').html(input.files[0].name);
-  };
-  reader.readAsDataURL(input.files[0]);
+    var reader = new FileReader();
+    reader.onload = function(e) {
+    $('.image-upload-wrap').hide();
+    $('.file-upload-image').attr('src', e.target.result);
+    $('.file-upload-content').show();
+    $('.image-title').html(input.files[0].name);
+    };
+    reader.readAsDataURL(input.files[0]);
   } else {
       removeUpload();
   }
   }
   function removeUpload() {
-  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-  $('.file-upload-content').hide();
-  $('.image-upload-wrap').show();
-  }
-  $('.image-upload-wrap').bind('dragover', function () {
-  $('.image-upload-wrap').addClass('image-dropping');
-  });
-  $('.image-upload-wrap').bind('dragleave', function () {
-  $('.image-upload-wrap').removeClass('image-dropping');
+    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+    $('.file-upload-content').hide();
+    $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+      $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function () {
+    $('.image-upload-wrap').removeClass('image-dropping');
   });
   </script>
 </head>
 <body>
   <div class = "logo">
-    <img src="https://raw.githubusercontent.com/clu-star/mhacks/master/logo/oncoBOT.png" style="width:600px;height:340px;">
+    <img src="https://raw.githubusercontent.com/clu-star/mhacks/master/logo/oncoBOT.png" style="width:600px;height:320px;">
   </div>
   <div class="file-upload">
+    <form action="" method=post enctype=multipart/form-data>
+
+  
+      
     <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
     <div class="image-upload-wrap">
       <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
       <div class="drag-text">
         <h3>Drag and drop a file or select add Image</h3>
+
       </div>
     </div>
     <div class="file-upload-content">
       <img class="file-upload-image" src="#" alt="your image" />
       <div class="image-title-wrap">
         <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+          <input type = 'submit' value = Upload>
+         </form>
       </div>
     </div>
   </div>
