@@ -211,7 +211,7 @@ def upload_file():
       <img class="file-upload-image" src="#" alt="your image" />
       <div class="image-title-wrap">
         <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-          <input type = 'submit' value = Upload>
+          <input type = submit value = Upload>
          </form>
       </div>
     </div>
