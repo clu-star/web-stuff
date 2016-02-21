@@ -26,11 +26,12 @@ def upload_file():
             return redirect(url_for('upload_file',
                                     filename=filename))
     return '''
-    <!doctype html>
+        <!doctype html>
 <html lang="en">
   <head>
     <style type="text/css">
     body {
+    
     font-family: sans-serif;
     background-color: #eeeeee;
     }
@@ -38,7 +39,8 @@ def upload_file():
     text-align: center;
     }
     .file-upload {
-    background-color: #ffffff;
+    opacity: .9;
+    background-color: #333333;
     width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -47,18 +49,18 @@ def upload_file():
     width: 100%;
     margin: 0;
     color: #fff;
-    background: #1FB264;
+    background: #e74b35;
     border: none;
     padding: 10px;
     border-radius: 4px;
-    border-bottom: 4px solid #15824B;
+    border-bottom: 4px solid #e74b35;
     transition: all .2s ease;
     outline: none;
     text-transform: uppercase;
     font-weight: 700;
     }
     .file-upload-btn:hover {
-    background: #1AA059;
+    background: #e74b35;
     color: #ffffff;
     transition: all .2s ease;
     cursor: pointer;
@@ -71,18 +73,18 @@ def upload_file():
     width: 100%;
     margin: 0;
     color: #fff;
-    background: #1FB264;
+    background: #e74b35;
     border: none;
     padding: 10px;
     border-radius: 4px;
-    border-bottom: 4px solid #15824B;
+    border-bottom: 4px solid #e74b35;
     transition: all .2s ease;
     outline: none;
     text-transform: uppercase;
     font-weight: 700;
     }
     .submit-btn:hover {
-    background: #1AA059;
+    background: #e74b35;
     color: #ffffff;
     transition: all .2s ease;
     cursor: pointer;
@@ -107,12 +109,12 @@ def upload_file():
     }
     .image-upload-wrap {
     margin-top: 20px;
-    border: 4px dashed #1FB264;
+    border: 4px dashed #e74b35;
     position: relative;
     }
     .image-dropping,
     .image-upload-wrap:hover {
-    background-color: #1FB264;
+    background-color: #555555;
     border: 4px dashed #ffffff;
     }
     .image-title-wrap {
@@ -126,7 +128,7 @@ def upload_file():
     .drag-text h3 {
     font-weight: 100;
     text-transform: uppercase;
-    color: #15824B;
+    color: #e74b35;
     padding: 60px 0;
     }
     .file-upload-image {
@@ -211,7 +213,7 @@ def upload_file():
       <img class="file-upload-image" src="#" alt="your image" />
       <div class="image-title-wrap">
         <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-          <input type = submit value = Upload>
+          <input type = 'submit' value = Upload>
          </form>
       </div>
     </div>
