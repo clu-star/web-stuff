@@ -1,0 +1,14 @@
+body {
+	background-color: #C0C0C0
+}
+h1 {
+	color: black
+	text-align: center;
+	font-size: 50 px
+	font-family: Georgia, "Lucida Console", serif;
+}
+
+p{
+	font-family: Georgia, "Lucida Console", serif;
+	font-size: 20px;
+}
